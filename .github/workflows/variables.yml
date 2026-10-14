@@ -14,5 +14,8 @@ jobs:
       - name: show application
         run: echo "application is $APP_NAME"
       - name: Show event
-        run: echo " event is ${{github.event_name}} and repository is ${{github.repository}}, branch is ${{github.ref}}" 
+        run: echo " event is ${{github.event_name}} and repository is ${{github.repository}}, branch is ${{github.ref}}"
+      - name: condition execution
+        if: ${{github.ref}} == 'refs/heads/main'
+        run: echo "deploying $APP_NAME in to the production" 
 
