@@ -7,7 +7,7 @@ on:
 env:
   APP_NAME: "Yogesh-APP"
 
-jods:
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
