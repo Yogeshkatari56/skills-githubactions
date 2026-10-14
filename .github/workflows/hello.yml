@@ -33,5 +33,11 @@ jobs:
         run: echo "Selected environment is ${{inputs.environmet}}"
       - name: show runner os
         run: uname -a
+      - name: show repo info
+        run: echo "repository is ${{github.repository}}"
+      - name: show actor info
+        run: echo "actor is ${{github.actor}}"
+      - name: show event
+        run: echo "event is ${{github.event}}"
       - name: show files
         run: ls -la
