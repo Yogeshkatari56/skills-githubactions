@@ -8,6 +8,7 @@ on:
   pull_requests:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   list_available_files_and_folders:
