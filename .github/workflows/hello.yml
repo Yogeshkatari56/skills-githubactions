@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  list available files and folders:
+  list_available_files_and_folders:
     runs-on: ubuntu-latest
 
     steps:
