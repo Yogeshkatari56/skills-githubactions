@@ -5,6 +5,9 @@ on:
     branches:
       - main
       - develop
+  pull_requests:
+    branches:
+      - main
 
 jobs:
   list_available_files_and_folders:
