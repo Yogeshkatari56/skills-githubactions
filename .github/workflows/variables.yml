@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: show application
-        run: echo "application is ${{APP_NAME}}"
+        run: echo "application is $APP_NAME"
       - name: Show event
         run: echo " event is ${{github.event_name}} and repository is ${{github.repository}}, branch is ${{github.ref}}" 
 
