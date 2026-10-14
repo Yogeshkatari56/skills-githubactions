@@ -3,7 +3,7 @@ name: list out the list of folder in the current repository
 on:
   push:
 
-job:
+jobs:
   list available files and folders:
     runs-on: ubuntu-latest
 
