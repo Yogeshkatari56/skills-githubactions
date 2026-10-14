@@ -29,6 +29,8 @@ jobs:
         uses: actions/checkout@v6
       - name: Say hello
         run: echo "hello yogesh"
+      - name: show environment info
+        run: echo "Selected environment is ${{inputs.environemt}}"
       - name: show runner os
         run: uname -a
       - name: show files
