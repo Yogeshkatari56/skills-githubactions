@@ -38,6 +38,6 @@ jobs:
       - name: show actor info
         run: echo "actor is ${{github.actor}}"
       - name: show event
-        run: echo "event is ${{github.event}}"
+        run: echo "event is ${{github._name}}"
       - name: show files
         run: ls -la
