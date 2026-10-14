@@ -30,7 +30,7 @@ jobs:
       - name: Say hello
         run: echo "hello yogesh"
       - name: show environment info
-        run: echo "Selected environment is ${{inputs.environemt}}"
+        run: echo "Selected environment is ${{inputs.environmet}}"
       - name: show runner os
         run: uname -a
       - name: show files
