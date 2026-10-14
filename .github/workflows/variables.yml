@@ -18,4 +18,10 @@ jobs:
       - name: condition execution
         if: ${{github.ref == 'refs/heads/main'}}
         run: echo "deploying $APP_NAME in to the production" 
+      - name: Production Deployment
+        if: ${{github.ref == 'refs/heads/main'}}
+        run: echo "production deployment started"
+      - name: Manual trigger check
+        if: ${{github.event_name == 'workflow_dispatch'}}
+        run: echo "pipeline is manually triggered"
 
