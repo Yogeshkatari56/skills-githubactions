@@ -9,6 +9,16 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      environmet:
+        description: "environemt to deploy"
+        requiered: true
+        type: choice
+        options:
+          - dev
+          - test
+          - prod
+
 
 jobs:
   list_available_files_and_folders:
