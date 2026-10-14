@@ -2,6 +2,9 @@ name: list out the list of folder in the current repository
 
 on:
   push:
+    branches:
+      - main
+      - develop
 
 jobs:
   list_available_files_and_folders:
