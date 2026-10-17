@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Build
-        run: echo "Building application"
+        run: exit 1
 
   test:
     needs: build
