@@ -4,26 +4,17 @@ on:
   workflow_dispatch:
 
 jobs:
-
-  build:
+  dependency:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Build
-        run: exit 1
-
-  test:
-    needs: build
+      - name: Generate version
+        id: version_step
+        run: echo "version=1.0.0" >> "$GITHUB_OUTPUT"
+      
+  printmessage:
+    needs: dependency
     runs-on: ubuntu-latest
-
     steps:
-      - name: Test
-        run: echo "Testing application"
-
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy
-        run: echo "Deploying application"
+      - name: print deployment version
+        run: echo "deployment version is ${{version_step.GITHUB_OUTPUT}}"
