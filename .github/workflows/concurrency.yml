@@ -1,0 +1,23 @@
+name: Concurrency Lab
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start deployment
+        run: echo "Deployment started"
+
+      - name: Simulate deployment
+        run: sleep 60
+
+      - name: Finish deployment
+        run: echo "Deployment completed"
+``
