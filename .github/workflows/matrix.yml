@@ -1,0 +1,24 @@
+name: Matrix Failure Lab
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [20, 22, 24]
+
+    steps:
+      - name: Show version
+        run: echo "Testing version ${{ matrix.version }}"
+
+      - name: Fail version 22
+        if: ${{ matrix.version == 22 }}
+        run: exit 1
+
+      - name: Test successful
+        run: echo "Version ${{ matrix.version }} passed"
