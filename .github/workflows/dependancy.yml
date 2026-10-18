@@ -1,0 +1,28 @@
+name: Dependency Cache Lab
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cache-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Restore dependency cache
+        id: cache-dependencies
+        uses: actions/cache@v4
+        with:
+          path: dependencies
+          key: demo-dependencies-v1
+
+      - name: Create dependencies
+        run: |
+          mkdir -p dependencies
+          echo "Dependency A" > dependencies/dependency-a.txt
+          echo "Dependency B" > dependencies/dependency-b.txt
+
+      - name: Show dependencies
+        run: ls -la dependencies

@@ -1,0 +1,40 @@
+name: Artifact Lab
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build application
+        run: |
+          mkdir dist
+          echo "Hello from Yogesh App" > dist/app.txt
+          echo "Version 1.0.0" >> dist/app.txt
+
+      - name: Show build
+        run: cat dist/app.txt
+      - name: Upload application
+      - uses: actions/upload-artifact@v4
+        with:
+          name: yogesh-app
+          path: dist/
+  
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download application
+        uses: actions/download-artifact@v5
+        with:
+          name: yogesh-app
+          path: downloaded-app
+
+      - name: Show downloaded application
+        run: cat downloaded-app/app.txt
+
+      - name: Deploy
+        run: echo "Application deployed successfully"
