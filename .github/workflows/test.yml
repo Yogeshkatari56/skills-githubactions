@@ -1,0 +1,11 @@
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment: production
+
+    tests:
+      - name: production deployment
+        runs: |
+          API_KEY=${{secrets.API_KEY}}
+          echo "Starting production deployment"

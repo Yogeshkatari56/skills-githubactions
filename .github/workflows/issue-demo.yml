@@ -1,0 +1,16 @@
+name: Issue-deployment-token
+
+on:
+  workflow_dispatch:
+
+jobs:
+  issue-demo:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    test:
+      - name: githubtoken usage
+        env: 
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: echo "Token configured"
