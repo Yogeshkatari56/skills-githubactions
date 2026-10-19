@@ -13,4 +13,4 @@ jobs:
 
     steps:
       - name: Deploy
-        run: echo "Deploying application"
+        run: echo "Deploying application ${{inputs.environment}}"
