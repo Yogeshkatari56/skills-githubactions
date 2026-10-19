@@ -1,10 +1,10 @@
 name: list out the list of folder in the current repository
 
 on:
-  push:
-    branches:
-      - main
-      - develop
+  #push:
+    #branches:
+      #- main
+      #- develop
   pull_request:
     branches:
       - main
