@@ -1,0 +1,20 @@
+name: deployment outpus
+
+on:
+  workflow_call:
+    outputs:
+      version: 
+        description: "App Version"
+        value: ${{jobs.deployment.outputs.appversion}}
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+
+    outputs:
+      appversion: ${{steps.versionstep.outputs.version}}
+    
+    steps:
+      - name: output values to another jobs
+        id: versionstep
+        run: echo "version=2.5.0" >> "GITHUB_OUTPUT"

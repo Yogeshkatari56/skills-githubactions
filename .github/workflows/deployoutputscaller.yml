@@ -1,0 +1,13 @@
+name: deployment workflow caller
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_deployment:
+    uses: ./.github/workflows/deployoutputs.yml
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print application version
+        run: echo "version is ${{needs.build_deployment.ouputs.version}}"
