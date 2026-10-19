@@ -9,7 +9,7 @@ jobs:
     permissions:
       contents: read
       issues: write
-    test:
+    steps:
       - name: githubtoken usage
         env: 
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
