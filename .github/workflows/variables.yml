@@ -1,7 +1,7 @@
 name: variables and conditions Lab
 
 on:
-  push:
+  #push:
   workflow_dispatch:
 
 env:
