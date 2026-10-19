@@ -4,7 +4,7 @@ jobs:
 
     environment: production
 
-    tests:
+    steps:
       - name: production deployment
         runs: |
           API_KEY=${{secrets.API_KEY}}
