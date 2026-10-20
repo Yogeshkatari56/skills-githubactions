@@ -9,6 +9,9 @@ inputs:
   environment:
     description: Deployment environment
     required: true
+  
+  version:
+    required: true
 
 runs:
   using: composite
@@ -25,3 +28,7 @@ runs:
     - name: Prepare deployment
       shell: bash
       run: echo "Preparing ${{ inputs.application }} for ${{ inputs.environment }}"
+
+    - name: deployment version
+      shell: bash
+      run: echo "deployment version is ${{ inputs.version}}"

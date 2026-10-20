@@ -16,3 +16,4 @@ jobs:
         with:
           application: payment-api
           environment: dev
+          version: 3.9.0
