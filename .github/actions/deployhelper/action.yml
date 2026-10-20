@@ -1,0 +1,27 @@
+name: Deploy Helper
+description: Prepare application deployment
+
+inputs:
+  application:
+    description: Application name
+    required: true
+
+  environment:
+    description: Deployment environment
+    required: true
+
+runs:
+  using: composite
+
+  steps:
+    - name: Show application
+      shell: bash
+      run: echo "Application = ${{ inputs.application }}"
+
+    - name: Show environment
+      shell: bash
+      run: echo "Environment = ${{ inputs.environment }}"
+
+    - name: Prepare deployment
+      shell: bash
+      run: echo "Preparing ${{ inputs.application }} for ${{ inputs.environment }}"
